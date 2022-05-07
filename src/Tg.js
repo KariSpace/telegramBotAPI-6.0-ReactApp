@@ -3,11 +3,11 @@ import React from 'react';
 const Tg = () => {
   
   function sayHello() {
-    alert(window.Telegram.WebApp);
+    return(window.Telegram.WebApp);
   }
   
   return (
-    <button onClick={sayHello}>Click me!</button>
+    <div >{JSON.stringify(window.Telegram.WebApp)}</div>
   );
 };
 
