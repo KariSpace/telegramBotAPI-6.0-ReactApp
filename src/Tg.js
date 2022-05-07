@@ -4,10 +4,17 @@ const Tg = () => {
   
   function sayHello() {
     return(window.Telegram.WebApp);
+    
+
   }
-  
+  let city = (new URLSearchParams(window.location.search)).get("city")
+
   return (
-    <div >{JSON.stringify(window.Telegram.WebApp)}</div>
+      
+    <div >{JSON.stringify(window.Telegram.WebApp)}
+    
+    <div >{city}</div>
+    </div>
   );
 };
 
