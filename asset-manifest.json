@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/telegramBotAPI-6.0-webApp/static/css/main.073c9b0a.css",
-    "main.js": "/telegramBotAPI-6.0-webApp/static/js/main.9d2ca6bd.js",
+    "main.js": "/telegramBotAPI-6.0-webApp/static/js/main.fd0f51df.js",
     "static/js/787.3906daec.chunk.js": "/telegramBotAPI-6.0-webApp/static/js/787.3906daec.chunk.js",
     "index.html": "/telegramBotAPI-6.0-webApp/index.html",
     "main.073c9b0a.css.map": "/telegramBotAPI-6.0-webApp/static/css/main.073c9b0a.css.map",
-    "main.9d2ca6bd.js.map": "/telegramBotAPI-6.0-webApp/static/js/main.9d2ca6bd.js.map",
+    "main.fd0f51df.js.map": "/telegramBotAPI-6.0-webApp/static/js/main.fd0f51df.js.map",
     "787.3906daec.chunk.js.map": "/telegramBotAPI-6.0-webApp/static/js/787.3906daec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.9d2ca6bd.js"
+    "static/js/main.fd0f51df.js"
   ]
 }
