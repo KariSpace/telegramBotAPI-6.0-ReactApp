@@ -10,7 +10,9 @@
     "gh-pages": "^3.2.3",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-luckydraw": "^0.1.6",
     "react-scripts": "5.0.1",
+    "react-wheel-of-prizes": "^1.0.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
