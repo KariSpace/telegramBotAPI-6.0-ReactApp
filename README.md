@@ -1,3 +1,16 @@
+# Intro
+This simple app created to test new Web Apps for Bots added in Telegram bot Api. More info you can find here: https://core.telegram.org/bots/webapps
+To see a Web App in action, try sample @DurgerKingBot.
+
+Current version of app can show user data and request params
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
