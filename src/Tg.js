@@ -14,11 +14,11 @@ const Tg = () => {
     },
     {
       "id" : '3', 
-      "text" : 'Sex Education'
+      "text" : 'React JS - React Tutorial for Beginners'
     },
     {
       "id" : '4', 
-      "text" : 'Sex and the City'
+      "text" : 'The Blood Ninja Trilogy'
     },
     {
       "id" : '5', 
