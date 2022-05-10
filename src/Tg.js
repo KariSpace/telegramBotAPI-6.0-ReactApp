@@ -1,19 +1,29 @@
 import React from 'react';
-import WheelComponent from 'react-wheel-of-prizes'
+//import WheelComponent from 'react-wheel-of-prizes-kari'
+import WheelComponent from './Wheel.js';
 
 const Tg = () => {
   const segments = [
-    'The Best of Archie Comics, 416 c.',
-    'Учим Python за 1 час! #От Профессионала',
-    'React JS Быстрый Курс 2020',
-    'Sex Education',
-    'Sex and the City',
-    'Soul Gangster Radio Show 082 - mixed by Gyhio',    
-    'The Best of Archie Comics, 416 c.',
-    'Учим Python за 1 час! #От Профессионала',
-    'React JS Быстрый Курс 2020',
-    'Sex Education',
-    'Sex and the City'
+    {
+      "id" : '1', 
+      "text" : 'The Best of Archie Comics, 416 c.'
+    },
+    {
+      "id" : '2', 
+      "text" : 'React JS Быстрый Курс 2020'
+    },
+    {
+      "id" : '3', 
+      "text" : 'Sex Education'
+    },
+    {
+      "id" : '4', 
+      "text" : 'Sex and the City'
+    },
+    {
+      "id" : '5', 
+      "text" : 'Учим Python за 1 час! #От Профессионала'
+    }
 
   ]
   const segColors = [
@@ -56,8 +66,8 @@ const Tg = () => {
       buttonText='Spin'
       isOnlyOnce={false}
       size={200}
-      upDuration={10}
-      downDuration={100}
+      upDuration={30}
+      downDuration={150}
       fontFamily='Arial'
     />
   )

@@ -1,4 +1,14 @@
-import React, { useState, useEffect } from 'react';
+// GNU General Public License v3.0 © shekharramola
+// Node module: @shekharramola
+// https://www.npmjs.com/package/react-wheel-of-prizes
+// This file is licensed under the GNU General Public License v3.0.
+// License text available at https://www.gnu.org/licenses/gpl-3.0.html
+
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var React = require('react');
+var React__default = _interopDefault(React);
 
 var WheelComponent = function WheelComponent(_ref) {
   var segments = _ref.segments,
@@ -8,7 +18,7 @@ var WheelComponent = function WheelComponent(_ref) {
       _ref$primaryColor = _ref.primaryColor,
       primaryColor = _ref$primaryColor === void 0 ? 'black' : _ref$primaryColor,
       _ref$contrastColor = _ref.contrastColor,
-      contrastColor = _ref$contrastColor === void 0 ? 'white' : _ref$contrastColor,
+      contrastColor = _ref$contrastColor === void 0 ? 'black' : _ref$contrastColor,
       _ref$buttonText = _ref.buttonText,
       buttonText = _ref$buttonText === void 0 ? 'Spin' : _ref$buttonText,
       _ref$isOnlyOnce = _ref.isOnlyOnce,
@@ -24,7 +34,7 @@ var WheelComponent = function WheelComponent(_ref) {
   var currentSegment = '';
   var isStarted = false;
 
-  var _useState = useState(false),
+  var _useState = React.useState(false),
       isFinished = _useState[0],
       setFinished = _useState[1];
 
@@ -38,9 +48,9 @@ var WheelComponent = function WheelComponent(_ref) {
   var downTime = segments.length * downDuration;
   var spinStart = 0;
   var frames = 0;
-  var centerX = 300;
-  var centerY = 300;
-  useEffect(function () {
+  var centerX = 220;
+  var centerY = 220;
+  React.useEffect(function () {
     wheelInit();
     setTimeout(function () {
       window.scrollTo(0, 1);
@@ -58,8 +68,8 @@ var WheelComponent = function WheelComponent(_ref) {
 
     if (navigator.userAgent.indexOf('MSIE') !== -1) {
       canvas = document.createElement('canvas');
-      canvas.setAttribute('width', 500);
-      canvas.setAttribute('height', 600);
+      canvas.setAttribute('width', 200);
+      canvas.setAttribute('height', 1000);
       canvas.setAttribute('id', 'canvas');
       document.getElementById('wheel').appendChild(canvas);
     }
@@ -136,7 +146,7 @@ var WheelComponent = function WheelComponent(_ref) {
 
   var drawSegment = function drawSegment(key, lastAngle, angle) {
     var ctx = canvasContext;
-    var value = segments[key];
+    var value = segments[key].text;
     ctx.save();
     ctx.beginPath();
     ctx.moveTo(centerX, centerY);
@@ -150,7 +160,7 @@ var WheelComponent = function WheelComponent(_ref) {
     ctx.translate(centerX, centerY);
     ctx.rotate((lastAngle + angle) / 2);
     ctx.fillStyle = contrastColor;
-    ctx.font = 'bold 0.5em ' + fontFamily;
+    ctx.font = 'bold 10px ' + fontFamily;
     ctx.fillText(value.substr(0, 21), size / 2 + 20, 0);
     ctx.restore();
   };
@@ -164,7 +174,7 @@ var WheelComponent = function WheelComponent(_ref) {
     ctx.strokeStyle = primaryColor;
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'center';
-    ctx.font = '1em ' + fontFamily;
+    ctx.font = '14px ' + fontFamily;
 
     for (var i = 1; i <= len; i++) {
       var angle = PI2 * (i / len) + angleCurrent;
@@ -173,13 +183,13 @@ var WheelComponent = function WheelComponent(_ref) {
     }
 
     ctx.beginPath();
-    ctx.arc(centerX, centerY, 50, 0, PI2, false);
+    ctx.arc(centerX, centerY, 40, 0, PI2, false);
     ctx.closePath();
     ctx.fillStyle = primaryColor;
-    ctx.lineWidth = 10;
+    ctx.lineWidth = 1;
     ctx.strokeStyle = contrastColor;
     ctx.fill();
-    ctx.font = 'bold 0.5em ' + fontFamily;
+    ctx.font = ' 14px ' + fontFamily;
     ctx.fillStyle = contrastColor;
     ctx.textAlign = 'center';
     ctx.fillText(buttonText, centerX, centerY + 3);
@@ -187,7 +197,7 @@ var WheelComponent = function WheelComponent(_ref) {
     ctx.beginPath();
     ctx.arc(centerX, centerY, size, 0, PI2, false);
     ctx.closePath();
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 2;
     ctx.strokeStyle = primaryColor;
     ctx.stroke();
   };
@@ -209,27 +219,27 @@ var WheelComponent = function WheelComponent(_ref) {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = primaryColor;
-    ctx.font = 'bold 0.5em ' + fontFamily;
+    ctx.font = 'bold 14px ' + fontFamily;
     currentSegment = segments[i];
-    isStarted && ctx.fillText(currentSegment, centerX + 10, centerY + size + 50);
+    isStarted && ctx.fillText(currentSegment.text, centerX + 10, centerY + size + 50);
   };
 
   var clear = function clear() {
     var ctx = canvasContext;
-    ctx.clearRect(0, 0, 1000, 800);
+    ctx.clearRect(0, 0, 1000, 1000);
   };
 
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default.createElement("div", {
     id: "wheel"
-  }, /*#__PURE__*/React.createElement("canvas", {
+  }, /*#__PURE__*/React__default.createElement("canvas", {
     id: "canvas",
-    width: "500",
-    height: "800",
+    width: "450",
+    height: "1000",
     style: {
       pointerEvents: isFinished && isOnlyOnce ? 'none' : 'auto'
     }
   }));
 };
 
-export default WheelComponent;
-//# sourceMappingURL=index.modern.js.map
+module.exports = WheelComponent;
+//# sourceMappingURL=index.js.map
