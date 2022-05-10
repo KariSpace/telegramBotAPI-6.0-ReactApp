@@ -55,7 +55,7 @@ const Tg = () => {
       contrastColor='white'
       buttonText='Spin'
       isOnlyOnce={false}
-      size={220}
+      size={200}
       upDuration={10}
       downDuration={100}
       fontFamily='Arial'
