@@ -8,7 +8,8 @@ const Tg = () => {
     'React JS Быстрый Курс 2020',
     'Sex Education',
     'Sex and the City',
-    'Soul Gangster Radio Show 082 - mixed by Gyhio',    'The Best of Archie Comics, 416 c.',
+    'Soul Gangster Radio Show 082 - mixed by Gyhio',    
+    'The Best of Archie Comics, 416 c.',
     'Учим Python за 1 час! #От Профессионала',
     'React JS Быстрый Курс 2020',
     'Sex Education',
@@ -18,11 +19,9 @@ const Tg = () => {
     'React JS Быстрый Курс 2020',
     'Sex Education',
     'Sex and the City',
-    'Soul Gangster Radio Show 082 - mixed by Gyhio',    'The Best of Archie Comics, 416 c.',
-    'Учим Python за 1 час! #От Профессионала',
-    'React JS Быстрый Курс 2020',
-    'Sex Education',
-    'Sex and the City'
+    'Soul Gangster Radio Show 082 - mixed by Gyhio',    
+    'The Best of Archie Comics, 416 c.',
+
   ]
   const segColors = [
     '#EE4040',
