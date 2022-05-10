@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+:root {
+  --color-bright:#f50b0b;
+}
 
 .App-logo {
   height: 40vmin;

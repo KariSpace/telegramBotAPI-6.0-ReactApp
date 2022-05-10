@@ -203,6 +203,7 @@ var WheelComponent = function WheelComponent(_ref) {
   };
 
   var drawNeedle = function drawNeedle() {
+    
     var ctx = canvasContext;
     ctx.lineWidth = 1;
     ctx.strokeStyle = contrastColor;
@@ -218,7 +219,7 @@ var WheelComponent = function WheelComponent(_ref) {
     if (i < 0) i = i + segments.length;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillStyle = primaryColor;
+    ctx.fillStyle = getComputedStyle(document.getElementById("canvas")).getPropertyValue("--tg-theme-text-color");
     ctx.font = 'bold 14px ' + fontFamily;
     currentSegment = segments[i];
     isStarted && ctx.fillText(currentSegment.text, centerX + 10, centerY + size + 50);

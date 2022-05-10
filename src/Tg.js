@@ -2,6 +2,7 @@ import React from 'react';
 //import WheelComponent from 'react-wheel-of-prizes-kari'
 import WheelComponent from './Wheel.js';
 
+
 const Tg = () => {
   const segments = [
     {
