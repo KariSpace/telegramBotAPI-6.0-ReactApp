@@ -48,7 +48,7 @@ var WheelComponent = function WheelComponent(_ref) {
   var downTime = segments.length * downDuration;
   var spinStart = 0;
   var frames = 0;
-  var centerX = 220;
+  var centerX = 200;
   var centerY = 220;
   React.useEffect(function () {
     wheelInit();
@@ -161,7 +161,37 @@ var WheelComponent = function WheelComponent(_ref) {
     ctx.rotate((lastAngle + angle) / 2);
     ctx.fillStyle = contrastColor;
     ctx.font = 'bold 10px ' + fontFamily;
-    ctx.fillText(value.substr(0, 21), size / 2 + 20, 0);
+
+    function wrapText(text, x, y, maxWidth, fontSize, fontFace){
+      var firstY=y;
+      var words = text.split(' ');
+      var line = '';
+      var lineHeight=fontSize // a good approx for 10-18px sizes
+    
+      ctx.font=fontSize+" "+fontFace;
+      ctx.textBaseline='top';
+    
+      for(var n = 0; n < words.length; n++) {
+        var testLine = line + words[n] + ' ';
+        var metrics = ctx.measureText(testLine);
+        var testWidth = metrics.width;
+        if(testWidth > maxWidth) {
+          
+          ctx.fillText(line, x, y);
+          if(n<words.length-1){
+              line = words[n] + ' ';
+              y += lineHeight;
+          }
+        }
+        else {
+          line = testLine;
+        }
+      }
+      ctx.fillText(line, x, y);
+    }
+
+    wrapText(value, size / 2 + 20, -10, 130, 15, fontFamily)
+   // ctx.fillText(line, size / 2 + 20, 0);
     ctx.restore();
   };
 
@@ -183,16 +213,16 @@ var WheelComponent = function WheelComponent(_ref) {
     }
 
     ctx.beginPath();
-    ctx.arc(centerX, centerY, 40, 0, PI2, false);
+    ctx.arc(centerX, centerY, 41, 0, PI2, false);
     ctx.closePath();
     ctx.fillStyle = primaryColor;
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 4;
     ctx.strokeStyle = contrastColor;
     ctx.fill();
-    ctx.font = ' 14px ' + fontFamily;
+    ctx.font = ' 15px ' + fontFamily;
     ctx.fillStyle = contrastColor;
     ctx.textAlign = 'center';
-    ctx.fillText(buttonText, centerX, centerY + 3);
+    ctx.fillText(buttonText, centerX, centerY );
     ctx.stroke();
     ctx.beginPath();
     ctx.arc(centerX, centerY, size, 0, PI2, false);
@@ -206,12 +236,12 @@ var WheelComponent = function WheelComponent(_ref) {
     
     var ctx = canvasContext;
     ctx.lineWidth = 1;
-    ctx.strokeStyle = contrastColor;
-    ctx.fileStyle = contrastColor;
+    ctx.strokeStyle = primaryColor;
+    ctx.fileStyle = primaryColor;
     ctx.beginPath();
-    ctx.moveTo(centerX + 20, centerY - 50);
-    ctx.lineTo(centerX - 20, centerY - 50);
-    ctx.lineTo(centerX, centerY - 70);
+    ctx.moveTo(centerX + 20, centerY - 37.5);
+    ctx.lineTo(centerX - 20, centerY - 37.5);
+    ctx.lineTo(centerX, centerY - 60);
     ctx.closePath();
     ctx.fill();
     var change = angleCurrent + Math.PI / 2;
@@ -222,7 +252,7 @@ var WheelComponent = function WheelComponent(_ref) {
     ctx.fillStyle = getComputedStyle(document.getElementById("canvas")).getPropertyValue("--tg-theme-text-color");
     ctx.font = 'bold 14px ' + fontFamily;
     currentSegment = segments[i];
-    isStarted && ctx.fillText(currentSegment.text, centerX + 10, centerY + size + 50);
+    isStarted && ctx.fillText(currentSegment.text, centerX + 10, centerY + size + 40);
   };
 
   var clear = function clear() {
@@ -234,7 +264,7 @@ var WheelComponent = function WheelComponent(_ref) {
     id: "wheel"
   }, /*#__PURE__*/React__default.createElement("canvas", {
     id: "canvas",
-    width: "450",
+    width: "400",
     height: "1000",
     style: {
       pointerEvents: isFinished && isOnlyOnce ? 'none' : 'auto'
@@ -243,4 +273,4 @@ var WheelComponent = function WheelComponent(_ref) {
 };
 
 module.exports = WheelComponent;
-//# sourceMappingURL=index.js.map
+
