@@ -1,5 +1,5 @@
 import React from 'react';
-import Tg from './Tg';
+import Wheel from './Wheel';
 import './App.css';
 
 
@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Tg />
+      <Wheel />
     </div>
   );
 }
