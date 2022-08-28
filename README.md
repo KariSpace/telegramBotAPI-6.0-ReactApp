@@ -2,11 +2,13 @@
 This simple app created to test new Web Apps for Bots added in Telegram bot Api. More info you can find here: https://core.telegram.org/bots/webapps
 To see a Web App in action, try sample @DurgerKingBot.
 
-Current version of app can show user data and request params
 
+App functionality:
+- Fortune wheel that can be added in chat-bot
+- Adapts to your Telegram theme
+- Return data to chat-bot via main button
 
-
-
+https://user-images.githubusercontent.com/52755167/187082023-cc270741-7f17-4cdb-9f31-953dac1781b8.mov
 
 
 
